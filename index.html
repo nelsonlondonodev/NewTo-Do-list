@@ -24,30 +24,34 @@
           </div>
           <div class="input-group mt-3 mb-3 p-5">
             <input
+              id="inputNewTask"
               type="text"
               class="form-control border-warning"
               placeholder="New task"
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
               value=""
+              required
             />
             <button
               class="btn btn-outline-warning"
               type="button"
               id="button-addon2"
+              onclick="buttonNetask()"
             >
               Create
             </button>
           </div>
-          <div class="divh3 text-center text-muted">
+          <div class="divh3 text-center text-muted invisible">
             <h3>Here your task's ⬇️</h3>
           </div>
-          <div class="divList" id="div-list">
-            <ul class="ulList" id="ul-list"></ul>
-          </div>
+        </div>
+        <div class="divList" id="div-list">
+          <ul class="ulList" id="ul-list"></ul>
         </div>
       </div>
     </div>
+    <script src="/js/main.js"></script>
     <script src="/styles/bootstrap-5.2.3-dist 3 copy 2/js/bootstrap.min.js"></script>
   </body>
 </html>

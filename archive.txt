@@ -1,0 +1,5 @@
+1 -Firs create html and css and am use  bootstrap components.
+
+2 -To create function for new list with text.
+
+3 -To create a funtion for input
