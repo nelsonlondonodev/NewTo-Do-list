@@ -3,7 +3,7 @@ dataInput.addEventListener("input", () => {
   return dataInput.value;
 });
 
-function buttonNetask() {
+function buttonNewtask() {
   let click = true;
 
   if (click) {
