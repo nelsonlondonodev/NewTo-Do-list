@@ -22,9 +22,8 @@ function buttonNewtask() {
     ulList.appendChild(newList);
     newList.innerText = dataInput.value;
     dataInput.value = "";
-  } else {
-    console.log("Conecto con el else...");
+
     const divH3 = document.querySelector(".divh3");
-    divH3.classList.add("invisible");
+    divH3.classList.replace("visible", "invisible");
   }
 }
