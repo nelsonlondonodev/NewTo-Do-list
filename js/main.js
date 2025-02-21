@@ -5,13 +5,11 @@ dataInput.addEventListener("input", () => {
 
 function buttonNewtask(_id) {
   let click = true;
-  let counter = 0;
 
   if (click) {
     const ulList = document.getElementById("ul-list");
     const newList = document.createElement("li");
-    newList.id = `li-id-${counter}`;
-    counter++;
+    newList.id = "li-id-" + Math.random().toString(36).substring(2, 9);
 
     newList.classList.add(
       "shadow",
@@ -23,7 +21,11 @@ function buttonNewtask(_id) {
       "rounded"
     );
 
+    newList.onclick =
+      "li-onclick-" + Math.random().toString(36).substring(2, 9);
+
     console.log(newList.id);
+    console.log(newList.onclick);
 
     ulList.appendChild(newList);
     newList.innerText = dataInput.value;
