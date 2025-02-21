@@ -3,12 +3,16 @@ dataInput.addEventListener("input", () => {
   return dataInput.value;
 });
 
-function buttonNewtask() {
+function buttonNewtask(_id) {
   let click = true;
+  let counter = 0;
 
   if (click) {
     const ulList = document.getElementById("ul-list");
     const newList = document.createElement("li");
+    newList.id = `li-id-${counter}`;
+    counter++;
+
     newList.classList.add(
       "shadow",
       "p-3",
@@ -18,6 +22,8 @@ function buttonNewtask() {
       "bg-body",
       "rounded"
     );
+
+    console.log(newList.id);
 
     ulList.appendChild(newList);
     newList.innerText = dataInput.value;
