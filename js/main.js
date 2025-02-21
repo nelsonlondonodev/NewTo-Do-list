@@ -1,7 +1,6 @@
 const dataInput = document.querySelector("#inputNewTask");
 dataInput.addEventListener("input", () => {
   return dataInput.value;
-  // console.log(dataInput.value);
 });
 
 function buttonNetask() {
@@ -14,6 +13,7 @@ function buttonNetask() {
       "shadow",
       "p-3",
       "mt-1",
+      "ms",
       "mb-3",
       "bg-body",
       "rounded"
@@ -23,6 +23,7 @@ function buttonNetask() {
     newList.innerText = dataInput.value;
     dataInput.value = "";
   } else {
+    console.log("Conecto con el else...");
     const divH3 = document.querySelector(".divh3");
     divH3.classList.add("invisible");
   }
