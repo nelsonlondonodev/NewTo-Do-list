@@ -5,7 +5,7 @@ dataInput.addEventListener("input", () => {
 });
 
 //== Function for to create list
-function buttonNewtask(_id) {
+function buttonNewtask(_id, classList) {
   //== Var for init the count
   let click = true;
 
@@ -13,11 +13,17 @@ function buttonNewtask(_id) {
     const ulList = document.getElementById("ul-list");
     const newList = document.createElement("li");
 
-    const toCreateImg = document.createElement("img");
-
     const onclickLi = "clickLi" + Math.random().toString(36).substring(2, 9);
 
     newList.id = "li-id-" + Math.random().toString(36).substring(2, 9);
+
+    //== Image ok
+    const toCreateImg = document.createElement("img");
+    toCreateImg.src = "/images/icons8-de-acuerdo-94.png";
+    toCreateImg.width = 50;
+    toCreateImg.height = 50;
+    toCreateImg.alt = "Image ok";
+    ulList.appendChild(toCreateImg);
 
     newList.classList.add(
       "shadow",
@@ -29,12 +35,9 @@ function buttonNewtask(_id) {
       "rounded"
     );
 
-    newList.img =
-      newList.onclick =
-      window[onclickLi] =
-        function () {
-          console.log("Entro el click");
-        };
+    newList.onclick = window[onclickLi] = function () {
+      console.log("Entro el click");
+    };
 
     ulList.appendChild(newList);
     newList.innerText = dataInput.value;
