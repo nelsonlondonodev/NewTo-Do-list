@@ -5,7 +5,7 @@ dataInput.addEventListener("input", () => {
 });
 
 //== Function for to create list
-function buttonNewtask(_id, classList) {
+function buttonNewtask(_id) {
   //== Var for init the count
   let click = true;
 
@@ -17,26 +17,52 @@ function buttonNewtask(_id, classList) {
 
     newList.id = "li-id-" + Math.random().toString(36).substring(2, 9);
 
-    //== Image ok
-    const toCreateImg = document.createElement("img");
-    toCreateImg.src = "/images/icons8-de-acuerdo-94.png";
-    toCreateImg.width = 50;
-    toCreateImg.height = 50;
-    toCreateImg.alt = "Image ok";
-    ulList.appendChild(toCreateImg);
+    function elementsLi() {
+      //== Image ok
+      const toCreateImgOk = document.createElement("img");
+      toCreateImgOk.src = "/images/icons8-de-acuerdo-94.png";
+      toCreateImgOk.width = 50;
+      toCreateImgOk.height = 50;
+      toCreateImgOk.alt = "Image ok";
+      toCreateImgOk.style.zIndex = 10;
+      ulList.appendChild(toCreateImgOk);
+
+      console.log("Conecto con imagen 1...");
+
+      //== Image delet
+      const toCreateImgDelet = document.createElement("img");
+      toCreateImgDelet.src = "/images/icons8-basura-94.png";
+      toCreateImgDelet.width = 50;
+      toCreateImgDelet.height = 50;
+      toCreateImgDelet.alt = "Image ok";
+      toCreateImgDelet.style.zIndex = 10;
+      ulList.appendChild(toCreateImgDelet);
+
+      console.log("Conecto con imagen 2...");
+
+      return;
+    }
+
+    elementsLi();
 
     newList.classList.add(
       "shadow",
+      "text-center",
       "p-3",
       "mt-1",
-      "ms",
       "mb-3",
       "bg-body",
       "rounded"
     );
 
     newList.onclick = window[onclickLi] = function () {
-      console.log("Entro el click");
+      let click = true;
+
+      if (click) {
+        elementsLi();
+        console.log("Entro el click");
+        return;
+      }
     };
 
     ulList.appendChild(newList);
