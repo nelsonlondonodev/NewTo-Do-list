@@ -43,8 +43,6 @@ function buttonNewtask(_id) {
       return;
     }
 
-    elementsLi();
-
     newList.classList.add(
       "shadow",
       "text-center",
@@ -55,6 +53,14 @@ function buttonNewtask(_id) {
       "rounded"
     );
 
+    ulList.appendChild(newList);
+    newList.innerText = dataInput.value;
+    dataInput.value = "";
+
+    const divH3 = document.querySelector(".divh3");
+    divH3.classList.replace("visible", "invisible");
+
+    //== This onclick of new li
     newList.onclick = window[onclickLi] = function () {
       let click = true;
 
@@ -64,12 +70,5 @@ function buttonNewtask(_id) {
         return;
       }
     };
-
-    ulList.appendChild(newList);
-    newList.innerText = dataInput.value;
-    dataInput.value = "";
-
-    const divH3 = document.querySelector(".divh3");
-    divH3.classList.replace("visible", "invisible");
   }
 }
