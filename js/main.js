@@ -24,6 +24,7 @@ function buttonNewtask(_id) {
 
     const onclickLi = "clickLi" + Math.random().toString(36).substring(2, 9);
 
+    //== This code is for to create dinamics id
     newList.id = "li-id-" + Math.random().toString(36).substring(2, 9);
 
     //== Image ok
@@ -51,10 +52,10 @@ function buttonNewtask(_id) {
     console.log("Conecto con imagen 2...");
 
     ulList.appendChild(newList);
-
     newList.innerText = dataInput.value;
     dataInput.value = "";
 
+    //== Code for hidden div with H3
     const divH3 = document.querySelector(".divh3");
     divH3.classList.replace("visible", "invisible");
 
