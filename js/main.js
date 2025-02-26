@@ -29,10 +29,11 @@ function buttonNewtask(_id) {
     //== Image ok
     const toCreateImgOk = document.createElement("img");
     toCreateImgOk.src = "/images/icons8-de-acuerdo-94.png";
-    toCreateImgOk.width = 50;
-    toCreateImgOk.height = 50;
+    toCreateImgOk.width = 35;
+    toCreateImgOk.height = 35;
     toCreateImgOk.alt = "Image ok";
     toCreateImgOk.style.zIndex = 10;
+    toCreateImgOk.classList.add("invisible");
     ulList.appendChild(toCreateImgOk);
 
     console.log("Conecto con imagen 1...");
@@ -40,22 +41,19 @@ function buttonNewtask(_id) {
     //== Image delet
     const toCreateImgDelet = document.createElement("img");
     toCreateImgDelet.src = "/images/icons8-basura-94.png";
-    toCreateImgDelet.width = 50;
-    toCreateImgDelet.height = 50;
+    toCreateImgDelet.width = 35;
+    toCreateImgDelet.height = 35;
     toCreateImgDelet.alt = "Image ok";
     toCreateImgDelet.style.zIndex = 10;
+    toCreateImgDelet.classList.add("invisible");
     ulList.appendChild(toCreateImgDelet);
 
     console.log("Conecto con imagen 2...");
 
-    newList.appendChild(toCreateImgOk);
-    newList.appendChild(dataInput);
-    newList.appendChild(toCreateImgDelet);
-
     ulList.appendChild(newList);
-    // newList.innerText = dataInput.value;
-    // dataInput.value = "";
-    document.querySelector("#inputNewTask").value = "";
+
+    newList.innerText = dataInput.value;
+    dataInput.value = "";
 
     const divH3 = document.querySelector(".divh3");
     divH3.classList.replace("visible", "invisible");
@@ -65,6 +63,11 @@ function buttonNewtask(_id) {
       let click = true;
 
       if (click) {
+        toCreateImgOk.classList.replace("invisible", "visible");
+        newList.appendChild(toCreateImgOk);
+
+        toCreateImgDelet.classList.replace("invisible", "visible");
+        newList.appendChild(toCreateImgDelet);
         console.log("Entro el click");
         return;
       }
