@@ -9,3 +9,13 @@
 ul {
   list-style: none;
 }
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li img {
+  margin: 10px;
+}

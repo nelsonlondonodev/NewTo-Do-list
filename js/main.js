@@ -5,18 +5,21 @@ dataInput.addEventListener("input", () => {
 });
 
 //== Function for to create list
-function buttonNewtask(_id) {
+function buttonNewtask() {
   //== Var for init the count
   let click = true;
 
   if (click) {
+    //== Code for hidden div with H3
+    const divH3 = document.querySelector(".divh3");
+    divH3.classList.replace("visible", "invisible");
+
     const ulList = document.getElementById("ul-list");
     const newList = document.createElement("li");
     newList.classList.add(
       "shadow",
       "text-center",
       "p-3",
-      "mt-1",
       "mb-3",
       "bg-body",
       "rounded"
@@ -35,9 +38,12 @@ function buttonNewtask(_id) {
     toCreateImgOk.alt = "Image ok";
     toCreateImgOk.style.zIndex = 10;
     toCreateImgOk.classList.add("invisible");
-    ulList.appendChild(toCreateImgOk);
+    newList.appendChild(toCreateImgOk);
 
-    console.log("Conecto con imagen 1...");
+    //==
+    const spanValue = document.createElement("span");
+    spanValue.textContent = dataInput.value;
+    newList.appendChild(spanValue);
 
     //== Image delet
     const toCreateImgDelet = document.createElement("img");
@@ -47,17 +53,11 @@ function buttonNewtask(_id) {
     toCreateImgDelet.alt = "Image ok";
     toCreateImgDelet.style.zIndex = 10;
     toCreateImgDelet.classList.add("invisible");
-    ulList.appendChild(toCreateImgDelet);
-
-    console.log("Conecto con imagen 2...");
+    newList.appendChild(toCreateImgDelet);
 
     ulList.appendChild(newList);
-    newList.innerText = dataInput.value;
+    newList.textContent = dataInput.value;
     dataInput.value = "";
-
-    //== Code for hidden div with H3
-    const divH3 = document.querySelector(".divh3");
-    divH3.classList.replace("visible", "invisible");
 
     //== This onclick of new li
     newList.onclick = window[onclickLi] = function () {
@@ -69,7 +69,6 @@ function buttonNewtask(_id) {
 
         toCreateImgDelet.classList.replace("invisible", "visible");
         newList.appendChild(toCreateImgDelet);
-        console.log("Entro el click");
         return;
       }
     };
