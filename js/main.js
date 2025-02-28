@@ -14,7 +14,9 @@ function buttonNewtask() {
     const divH3 = document.querySelector(".divh3");
     divH3.classList.replace("visible", "invisible");
 
+    //== Code for to create a new li
     const ulList = document.getElementById("ul-list");
+
     const newList = document.createElement("li");
     newList.classList.add(
       "shadow",
@@ -23,8 +25,7 @@ function buttonNewtask() {
       "mb-3",
       "bg-body",
       "rounded",
-      "fw-bold",
-      "ms-5"
+      "fw-bold"
     );
 
     //== Dinamic onclick
@@ -44,9 +45,9 @@ function buttonNewtask() {
     // newList.appendChild(toCreateImgOk);
 
     //==
-    const spanValue = document.createElement("span");
-    spanValue.textContent = dataInput.value;
-    newList.appendChild(spanValue);
+    // const spanValue = document.createElement("span");
+    // spanValue.textContent = dataInput.value;
+    // newList.appendChild(spanValue);
 
     //== Image delet
     const toCreateImgDelet = document.createElement("img");
@@ -63,18 +64,20 @@ function buttonNewtask() {
     dataInput.value = "";
 
     //== This onclick of new li
-    ulList.onclick = window[onclickLi] = function () {
+    newList.onclick = window[onclickLi] = function () {
       let click = true;
 
       if (click) {
         // toCreateImgOk.classList.replace("invisible", "visible");
         // newList.appendChild(toCreateImgOk);
 
-        newList.classList.add("text-decoration-line-through");
+        newList.classList.add("text-decoration-line-through", "text-muted");
 
         toCreateImgDelet.classList.replace("invisible", "visible");
         newList.appendChild(toCreateImgDelet);
         return;
+      } else {
+        ulList.classList.remove("text-decoration-line-through");
       }
     };
   }
