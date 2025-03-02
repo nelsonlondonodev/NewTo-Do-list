@@ -1,3 +1,11 @@
+.spanNumerTodo {
+  font-size: 41px;
+}
+
+.spanNumerTodoCompleted {
+  font-size: 41px;
+}
+
 #inputNewTask {
   font-size: 19px !important;
   box-shadow: none;

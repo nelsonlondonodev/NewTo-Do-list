@@ -4,6 +4,8 @@ dataInput.addEventListener("input", () => {
   return dataInput.value;
 });
 
+const counterElements = document.querySelector(".spanNumerTodo");
+
 //== Function for to create list
 function buttonNewtask() {
   //== Obtener el valor del input
@@ -54,6 +56,10 @@ function buttonNewtask() {
     ulList.appendChild(newList);
     newList.textContent = dataInput.value;
     dataInput.value = "";
+
+    const countLi = ulList.children.length;
+    counterElements.textContent = `${countLi}`;
+    console.log(`Numero de tasks: ${countLi}`);
 
     //== This onclick of new li
     newList.onclick = window[onclickLi] = function () {
