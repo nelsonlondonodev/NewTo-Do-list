@@ -1,5 +1,6 @@
 #inputNewTask {
   font-size: 19px !important;
+  box-shadow: none;
 }
 
 .form-control {
