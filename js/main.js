@@ -6,9 +6,16 @@ dataInput.addEventListener("input", () => {
 
 //== Function for to create list
 function buttonNewtask() {
+  //== Obtener el valor del input
+  const inputValue = dataInput.value.trim();
+
   //== Var for init the count
   let click = true;
 
+  if (inputValue === "") {
+    alert("Debe introducir una nueva tarea...");
+    return;
+  }
   if (click) {
     //== Code for hidden div with H3
     const divH3 = document.querySelector(".divh3");
@@ -34,21 +41,6 @@ function buttonNewtask() {
     //== This code is for to create dinamics id
     newList.id = "li-id-" + Math.random().toString(36).substring(2, 9);
 
-    //== Image ok
-    // const toCreateImgOk = document.createElement("img");
-    // toCreateImgOk.src = "/images/icons8-de-acuerdo-94.png";
-    // toCreateImgOk.width = 35;
-    // toCreateImgOk.height = 35;
-    // toCreateImgOk.alt = "Image ok";
-    // toCreateImgOk.style.zIndex = 10;
-    // toCreateImgOk.classList.add("invisible");
-    // newList.appendChild(toCreateImgOk);
-
-    //==
-    // const spanValue = document.createElement("span");
-    // spanValue.textContent = dataInput.value;
-    // newList.appendChild(spanValue);
-
     //== Image delet
     const toCreateImgDelet = document.createElement("img");
     toCreateImgDelet.src = "/images/icons8-basura-94.png";
@@ -68,9 +60,6 @@ function buttonNewtask() {
       let click = true;
 
       if (click) {
-        // toCreateImgOk.classList.replace("invisible", "visible");
-        // newList.appendChild(toCreateImgOk);
-
         newList.classList.add("text-decoration-line-through", "text-muted");
 
         toCreateImgDelet.classList.replace("invisible", "visible");
@@ -78,6 +67,7 @@ function buttonNewtask() {
         return;
       } else {
         ulList.classList.remove("text-decoration-line-through");
+        return;
       }
     };
   }
