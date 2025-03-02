@@ -1,3 +1,7 @@
+#inputNewTask {
+  font-size: 19px !important;
+}
+
 .form-control {
   height: 70px;
   font-size: 30px;
@@ -10,6 +14,7 @@ ul {
 li {
   display: flex;
   justify-content: space-between;
+  font-size: 19px;
   align-items: center;
   height: 75px;
   cursor: pointer;

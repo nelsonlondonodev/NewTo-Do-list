@@ -13,7 +13,7 @@ function buttonNewtask() {
   let click = true;
 
   if (inputValue === "") {
-    alert("Debe introducir una nueva tarea...");
+    alert("Debe introducir una tarea...");
     return;
   }
   if (click) {
