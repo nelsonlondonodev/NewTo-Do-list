@@ -5,6 +5,10 @@ dataInput.addEventListener("input", () => {
 });
 
 const counterElements = document.querySelector(".spanNumerTodo");
+const tasksOk = document.querySelector(".spanNumerTodoCompleted");
+
+//== Count completed task
+let completedTasks = 0;
 
 //== Function for to create list
 function buttonNewtask() {
@@ -59,7 +63,6 @@ function buttonNewtask() {
 
     const countLi = ulList.children.length;
     counterElements.textContent = `${countLi}`;
-    console.log(`Numero de tasks: ${countLi}`);
 
     //== This onclick of new li
     newList.onclick = window[onclickLi] = function () {
@@ -70,6 +73,20 @@ function buttonNewtask() {
 
         toCreateImgDelet.classList.replace("invisible", "visible");
         newList.appendChild(toCreateImgDelet);
+
+        //== Actualy count
+        completedTasks++;
+        tasksOk.textContent = `${completedTasks}`;
+
+        //== To add event onclick image
+        toCreateImgDelet.onclick = function (e) {
+          e.stopPropagation();
+          ulList.removeChild(newList);
+          completedTasks--;
+          tasksOk.textContent = `${completedTasks}`;
+          counterElements.textContent = `${ulList.children.length}`;
+        };
+
         return;
       } else {
         ulList.classList.remove("text-decoration-line-through");
