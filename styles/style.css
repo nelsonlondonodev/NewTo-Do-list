@@ -16,6 +16,13 @@
   font-size: 30px;
 }
 
+.btn-New-task {
+  background-color: rgb(136, 238, 208) !important;
+}
+.btn-New-task:hover {
+  background-color: rgb(202, 224, 129) !important;
+}
+
 ul {
   list-style: none;
 }

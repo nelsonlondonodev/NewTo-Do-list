@@ -5,6 +5,7 @@ dataInput.addEventListener("input", () => {
 });
 
 const counterElements = document.querySelector(".spanNumerTodo");
+counterElements.style.color = "rgb(136, 238, 208)";
 const tasksOk = document.querySelector(".spanNumerTodoCompleted");
 tasksOk.style.color = "rgb(239, 67, 53)";
 
