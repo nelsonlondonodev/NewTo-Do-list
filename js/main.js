@@ -6,6 +6,7 @@ dataInput.addEventListener("input", () => {
 
 const counterElements = document.querySelector(".spanNumerTodo");
 const tasksOk = document.querySelector(".spanNumerTodoCompleted");
+tasksOk.style.color = "rgb(239, 67, 53)";
 
 //== Count completed task
 let completedTasks = 0;
