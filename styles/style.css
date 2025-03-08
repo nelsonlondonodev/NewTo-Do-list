@@ -24,7 +24,8 @@
   background-color: rgb(136, 238, 208) !important;
 }
 .btn-New-task:hover {
-  background-color: rgb(57, 189, 149) !important;
+  background-color: rgb(245, 245, 245) !important;
+  border: 1px solid black !important;
 }
 
 ul {

@@ -69,11 +69,14 @@ function buttonNewtask() {
     const countLi = ulList.children.length;
     counterElements.textContent = `${countLi}`;
 
+    let taskCompleted = false;
+
     //== This onclick of new li
     newList.onclick = window[onclickLi] = function () {
-      let click = true;
+      if (!taskCompleted) {
+        //== Add class for to indicate that task was completed
+        newList.classList.add("text-decoration-line-through", "text-muted");
 
-      if (click) {
         toCreateImgDelet.classList.replace("invisible", "visible");
 
         newList.appendChild(toCreateImgDelet);
@@ -85,7 +88,10 @@ function buttonNewtask() {
         if (completedTasks === ulList.children.length) {
           counterElements.style.color = "rgb(136, 238, 208)";
           tasksOk.style.color = "rgb(136, 238, 208)";
+          return;
         }
+
+        taskCompleted = true;
 
         //== To add event onclick image
         toCreateImgDelet.onclick = function (e) {
