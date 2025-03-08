@@ -74,8 +74,6 @@ function buttonNewtask() {
       let click = true;
 
       if (click) {
-        newList.classList.add("text-decoration-line-through", "text-muted");
-
         toCreateImgDelet.classList.replace("invisible", "visible");
 
         newList.appendChild(toCreateImgDelet);
@@ -97,8 +95,6 @@ function buttonNewtask() {
           tasksOk.textContent = `${completedTasks}`;
           counterElements.textContent = `${ulList.children.length}`;
         };
-
-        return;
       } else {
         ulList.classList.remove("text-decoration-line-through");
         return;
