@@ -7,13 +7,16 @@ dataInput.addEventListener("input", () => {
 const counterElements = document.querySelector(".spanNumerTodo");
 counterElements.style.color = "rgb(136, 238, 208)";
 const tasksOk = document.querySelector(".spanNumerTodoCompleted");
-tasksOk.style.color = "rgb(239, 67, 53)";
+tasksOk.style.color = "rgb(136, 238, 208)";
 
 //== Count completed task
 let completedTasks = 0;
 
 //== Function for to create list
 function buttonNewtask() {
+  counterElements.style.color = "rgb(239, 67, 53)";
+  tasksOk.style.color = "rgb(239, 67, 53)";
+
   //== Obtener el valor del input
   const inputValue = dataInput.value.trim();
 
@@ -74,11 +77,17 @@ function buttonNewtask() {
         newList.classList.add("text-decoration-line-through", "text-muted");
 
         toCreateImgDelet.classList.replace("invisible", "visible");
+
         newList.appendChild(toCreateImgDelet);
 
         //== Actualy count
         completedTasks++;
         tasksOk.textContent = `${completedTasks}`;
+
+        if (completedTasks === ulList.children.length) {
+          counterElements.style.color = "rgb(136, 238, 208)";
+          tasksOk.style.color = "rgb(136, 238, 208)";
+        }
 
         //== To add event onclick image
         toCreateImgDelet.onclick = function (e) {
