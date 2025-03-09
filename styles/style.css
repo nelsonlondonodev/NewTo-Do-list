@@ -46,6 +46,5 @@ li img {
 }
 
 li:hover {
-  background: rgb(245, 245, 245) !important;
   border: 1px solid black;
 }

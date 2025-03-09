@@ -14,8 +14,8 @@ let completedTasks = 0;
 
 //== Function for to create list
 function buttonNewtask() {
-  counterElements.style.color = "rgb(239, 67, 53)";
-  tasksOk.style.color = "rgb(239, 67, 53)";
+  counterElements.style.color = "RGB(239, 67, 53)";
+  tasksOk.style.color = "RGB(239, 67, 53)";
 
   //== Obtener el valor del input
   const inputValue = dataInput.value.trim();
@@ -35,16 +35,30 @@ function buttonNewtask() {
     //== Code for to create a new li
     const ulList = document.getElementById("ul-list");
 
+    const random = Math.random();
+
+    const colors = [
+      "RGB(239, 67, 53)",
+      "rgb(246, 139, 54)",
+      "rgb(242, 205, 79)",
+      "rgb(202, 224, 129)",
+      "rgb(136, 238, 208)",
+    ];
+
+    const backGroundColor = colors[Math.floor(random * colors.length)];
+
     const newList = document.createElement("li");
     newList.classList.add(
       "shadow",
       "text-center",
       "p-3",
       "mb-3",
-      "bg-body",
       "rounded",
       "fw-bold"
     );
+
+    newList.style.backgroundColor = backGroundColor;
+    console.log(`Color de fondo aleatorio: ${backGroundColor}`);
 
     //== Dinamic onclick
     const onclickLi = "clickLi" + Math.random().toString(36).substring(2, 9);
