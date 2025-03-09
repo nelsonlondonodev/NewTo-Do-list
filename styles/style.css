@@ -4,6 +4,7 @@
   --color-3: rgb(202, 224, 129);
   --color-4: rgb(246, 139, 54);
   --color-5: rgb(245, 245, 245);
+  --color-6: rgb(0, 0, 0);
 }
 
 .text-Do {
@@ -33,7 +34,7 @@
 }
 .btn-New-task:hover {
   background-color: var(--color-5) !important;
-  border: 1px solid black !important;
+  border: 1px solid var(--color-6) !important;
 }
 
 ul {
@@ -54,5 +55,5 @@ li img {
 }
 
 li:hover {
-  border: 1px solid black;
+  border: 1px solid var(--color-6);
 }
