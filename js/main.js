@@ -38,7 +38,6 @@ function buttonNewtask() {
     const random = Math.random();
 
     const colors = [
-      "RGB(239, 67, 53)",
       "rgb(246, 139, 54)",
       "rgb(242, 205, 79)",
       "rgb(202, 224, 129)",
@@ -114,6 +113,13 @@ function buttonNewtask() {
           completedTasks--;
           tasksOk.textContent = `${completedTasks}`;
           counterElements.textContent = `${ulList.children.length}`;
+
+          //== To update the counter of tasks completed.
+          if (completedTasks === 0) {
+            tasksOk.textContent = "0";
+            counterElements.style.color = "rgb(136, 238, 208)";
+            tasksOk.style.color = "rgb(136, 238, 208)";
+          }
         };
       } else {
         ulList.classList.remove("text-decoration-line-through");
