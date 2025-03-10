@@ -57,7 +57,6 @@ function buttonNewtask() {
     );
 
     newList.style.backgroundColor = backGroundColor;
-    console.log(`Color de fondo aleatorio: ${backGroundColor}`);
 
     //== Dinamic onclick
     const onclickLi = "clickLi" + Math.random().toString(36).substring(2, 9);
@@ -89,6 +88,7 @@ function buttonNewtask() {
       if (!taskCompleted) {
         //== Add class for to indicate that task was completed
         newList.classList.add("text-decoration-line-through", "text-muted");
+        newList.style.opacity = "0.5";
 
         toCreateImgDelet.classList.replace("invisible", "visible");
 

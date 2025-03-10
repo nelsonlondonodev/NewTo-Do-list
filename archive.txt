@@ -3,3 +3,91 @@
 2 -To create function for new list with text.
 
 3 -To create a funtion for input
+
+
+You
+
+Hola, tengo un bug. Resulta que al crear las tareas y cuado doy click a las tareas "li", el counter con variable "taskOk" no queda en cero "0" como el total to do con variable "counterElements". ¿Enseñeme como puedo hacer para que esto no sigua sucediendo?
+
+BLACKBOXAI
+
+Solución
+
+El problema es que cuando se completa una tarea y se elimina, el contador de tareas completadas (tasksOk) no se actualiza correctamente. Esto se debe a que el contador se actualiza solo cuando se completa una tarea, pero no se actualiza cuando se elimina una tarea.
+
+Para solucionar este problema, debes actualizar el contador de tareas completadas (tasksOk) cuando se elimine una tarea. Puedes hacer esto agregando una línea de código en la función que elimina la tarea.
+
+Código actualizado
+
+javascript
+Insert Code
+Run
+Copy code
+// ...
+
+// To add event onclick image
+toCreateImgDelet.onclick = function (e) {
+  e.stopPropagation();
+  ulList.removeChild(newList);
+  completedTasks--;
+  tasksOk.textContent = `${completedTasks}`;
+  counterElements.textContent = `${ulList.children.length}`;
+
+  // Actualizar el contador de tareas completadas si es cero
+  if (completedTasks === 0) {
+    tasksOk.textContent = "0";
+    counterElements.style.color = "rgb(136, 238, 208)";
+    tasksOk.style.color = "rgb(136, 238, 208)";
+  }
+};
+Explicación
+
+En la función que elimina la tarea, se actualiza el contador de tareas completadas (tasksOk) y se verifica si el contador es cero. Si es cero, se actualiza el texto del contador y se cambia el color del texto a verde.
+
+Verificación
+
+Después de actualizar el código, debes verificar que el contador de tareas completadas (tasksOk) se actualice correctamente cuando se elimine una tarea. Si no se actualiza correctamente, debes revisar el código y asegurarte de que se estén cumpliendo las condiciones mencionadas anteriormente.
+
+Otra forma de hacerlo
+
+Otra forma de hacerlo es utilizando una función que actualice el contador de tareas completadas y el total de tareas pendientes. Esta función se puede llamar cada vez que se complete o elimine una tarea.
+
+Código actualizado
+
+javascript
+Insert Code
+Run
+Copy code
+function updateCounters() {
+  completedTasks = 0;
+  for (let i = 0; i < ulList.children.length; i++) {
+    if (ulList.children[i].classList.contains("text-decoration-line-through")) {
+      completedTasks++;
+    }
+  }
+  tasksOk.textContent = `${completedTasks}`;
+  counterElements.textContent = `${ulList.children.length}`;
+
+  if (completedTasks === ulList.children.length) {
+    counterElements.style.color = "rgb(136, 238, 208)";
+    tasksOk.style.color = "rgb(136, 238, 208)";
+  } else {
+    counterElements.style.color = "RGB(239, 67, 53)";
+    tasksOk.style.color = "RGB(239, 67, 53)";
+  }
+}
+
+// ...
+
+// To add event onclick image
+toCreateImgDelet.onclick = function (e) {
+  e.stopPropagation();
+  ulList.removeChild(newList);
+  updateCounters();
+};
+Explicación
+
+En esta forma, se crea una función updateCounters que actualiza el contador de tareas completadas y el total de tareas pendientes. Esta función se llama cada vez que se complete o elimine una tarea.
+
+
+Copy message
