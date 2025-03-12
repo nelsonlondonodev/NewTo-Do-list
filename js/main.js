@@ -88,7 +88,7 @@ function buttonNewtask() {
       if (!taskCompleted) {
         //== Add class for to indicate that task was completed
         newList.classList.add("text-decoration-line-through", "text-muted");
-        newList.style.opacity = "0.5";
+        newList.style.opacity = "0.7";
 
         toCreateImgDelet.classList.replace("invisible", "visible");
 
