@@ -7,6 +7,11 @@
   --color-6: rgb(0, 0, 0);
 }
 
+.boxElements {
+  max-height: 500px;
+  background-color: rgb(248, 223, 223);
+}
+
 .text-Do {
   color: var(--color-2);
 }
